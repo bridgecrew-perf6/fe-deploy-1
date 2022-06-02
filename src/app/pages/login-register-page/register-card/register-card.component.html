@@ -1,0 +1,84 @@
+<div class="form-start">
+  <h1>Hello there!</h1>
+  <p>Take your first step into greatness!</p>
+  <div style="display: flex; align-content: center; flex-direction: column; align-items: center">
+    <mat-stepper orientation="vertical">
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input [(ngModel)]="user.username" formControlName="Username" matInput />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              [(ngModel)]="user.password"
+              [type]="hide ? 'password' : 'text'"
+              formControlName="Password"
+              matInput
+            />
+            <button
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+              mat-icon-button
+              matSuffix
+            >
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div class="login-buttons">
+            <button class="button-full" mat-button matStepperNext>Next</button>
+            <button class="button-outline" routerLink="..">Back</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input [(ngModel)]="user.firstName" formControlName="FirstName" matInput />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input [(ngModel)]="user.lastName" formControlName="LastName" matInput />
+          </mat-form-field>
+          <div class="login-buttons">
+            <button class="button-full" mat-button matStepperNext>Next</button>
+            <button class="button-outline" matStepperPrevious>Back</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input [(ngModel)]="user.email" email formControlName="Email" matInput />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Phone Number</mat-label>
+            <input [(ngModel)]="user.phone" formControlName="Phone" matInput />
+          </mat-form-field>
+          <div class="login-buttons">
+            <button class="button-full" mat-button matStepperNext>Next</button>
+            <button class="button-outline" matStepperPrevious>Back</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="forthFormGroup">
+        <form [formGroup]="forthFormGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>Adress</mat-label>
+            <input [(ngModel)]="user.location" formControlName="Adress" matInput />
+          </mat-form-field>
+          <div class="login-buttons">
+            <button (click)="registerpress()" class="button-full" mat-button>Register</button>
+            <button class="button-outline" matStepperPrevious>Back</button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>

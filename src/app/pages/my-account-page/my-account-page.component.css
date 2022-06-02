@@ -1,0 +1,25 @@
+.my-account-contents {
+  display: flex;
+  z-index: -1;
+  margin-top: 70px;
+  padding-left: 74px;
+  padding-right: 74px;
+  flex-direction: column;
+  row-gap: 1vw;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  padding-top: 20px;
+  border-radius: 16px;
+  background: var(--color-secundary);
+  min-height: 500px;
+}
+
+.item-list-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

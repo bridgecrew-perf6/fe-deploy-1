@@ -1,0 +1,36 @@
+.example-section {
+  margin: 12px 0;
+}
+
+.example-margin {
+  margin: 0 12px;
+}
+
+h1 {
+  padding-top: 15px;
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+mat-form-field {
+  padding-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

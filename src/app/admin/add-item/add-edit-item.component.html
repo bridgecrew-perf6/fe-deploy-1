@@ -1,0 +1,73 @@
+<h1>{{ itemId ? 'Edit item' : 'Add item' }}</h1>
+
+<form [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" color="warn">
+    <mat-label>Price</mat-label>
+    <input formControlName="price" matInput type="number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity</mat-label>
+    <input formControlName="quantity" matInput type="number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <input formControlName="description" matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Thumbnail</mat-label>
+    <input formControlName="thumbnail" matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <ngx-mat-file-input
+      formControlName="currentFile"
+      placeholder="Basic Input"
+    ></ngx-mat-file-input>
+    <mat-icon matSuffix>folder</mat-icon>
+  </mat-form-field>
+
+  <section class="example-section">
+    <span class="example-list-section">
+      <ul>
+        <li *ngFor="let category of categoriesService.allCateg">
+          <mat-checkbox
+            (ngModelChange)="addCategory(category)"
+            [ngModelOptions]="{ standalone: true }"
+            [ngModel]="isSelected(category)"
+          >
+            {{ category }}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>
+
+  <div class="buttons">
+    <button
+      [routerLink]="'..'"
+      aria-label="Example icon button with a menu icon"
+      color="primary"
+      mat-button
+    >
+      <mat-icon>arrow_back</mat-icon>
+      Back
+    </button>
+    <button
+      (click)="save()"
+      aria-label="Example icon button with a menu icon"
+      color="primary"
+      mat-raised-button
+    >
+      <mat-icon>save</mat-icon>
+      Save
+    </button>
+  </div>
+</form>

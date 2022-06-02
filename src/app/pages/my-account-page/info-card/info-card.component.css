@@ -1,0 +1,20 @@
+.info-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-card {
+  width: 550px;
+  height: 248px;
+  background: var(--color-secundary);
+  padding: 16px 16px 16px 16px;
+  border-radius: 16px;
+}
+
+.change-button {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

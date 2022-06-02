@@ -1,0 +1,41 @@
+.icon-button {
+  padding: 6px;
+}
+
+button {
+  background: none;
+  line-height: 0;
+  padding: 0;
+  min-width: 0;
+  font: inherit;
+}
+
+.changecolor {
+  fill: var(--color-accent);
+}
+
+::ng-deep.mat-menu-panel.user-menu {
+  margin-top: 20px;
+  background: var(--color-tertiary);
+  border-radius: 8px;
+}
+
+.user-content {
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.user-option {
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--color-secundary-font);
+  background: none;
+  border-style: none;
+}
+
+.user-option:hover {
+  color: var(--color-main-font);
+}
